@@ -54,7 +54,7 @@ class Update
      * @var boolean
      */
     public $attachment = 'true';
-     
+
     /**
      * An associative array of media to be attached to the update, currently
      * accepts link, description and picture parameters.
@@ -62,6 +62,13 @@ class Update
      * @var array
      */
     public $media = array();
+
+    /**
+     * The photo URL
+     *
+     * @var string
+     */
+    public $photo = array();
 
     /**
      * A date describing when the update should be posted. Overrides any top or

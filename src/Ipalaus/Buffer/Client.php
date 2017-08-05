@@ -333,6 +333,10 @@ class Client
             'attachment' => $update->attachment
         );
 
+        if ( ! empty($update->photo)) {
+            $payload['photo'] = $update->photo;
+        }
+
         if ( ! empty($update->media)) {
             $payload['media'] = $update->media;
         }
