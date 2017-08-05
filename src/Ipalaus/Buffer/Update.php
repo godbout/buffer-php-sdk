@@ -64,13 +64,6 @@ class Update
     public $media = array();
 
     /**
-     * The photo URL
-     *
-     * @var string
-     */
-    public $photo = array();
-
-    /**
      * A date describing when the update should be posted. Overrides any top or
      * now parameter. When using ISO 8601 format, if no UTC offset is specified,
      * UTC is assumed.
@@ -101,7 +94,7 @@ class Update
      */
     public function addMedia($key, $value)
     {
-        $available = array('link', 'description', 'picture', 'thumbnail');
+        $available = array('link', 'description', 'title', 'picture', 'photo', 'thumbnail');
 
         // accept only valid types for media
         if ( ! in_array($key, $available)) {
