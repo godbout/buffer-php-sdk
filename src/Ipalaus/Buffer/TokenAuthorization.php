@@ -2,7 +2,7 @@
 
 namespace Ipalaus\Buffer;
 
-use Guzzle\Http\Message\Request;
+use GuzzleHttp\Psr7\Request;
 
 class TokenAuthorization implements AuthorizationInterface
 {
@@ -28,12 +28,16 @@ class TokenAuthorization implements AuthorizationInterface
     /**
      * Add the authoritzation credentials to a request.
      *
-     * @param  \Guzzle\Http\Message\Request  $request
-     * @return \Guzzle\Http\Message\Request
+     * @param  \GuzzleHttp\Psr7\Request  $request
+     * @return \GuzzleHttp\Psr7\Request
      */
     public function addCredentialsToRequest(Request $request)
     {
-        return $request->addHeader('Authorization', 'Bearer '.$this->token);
+        return $request->addHeader('Authorization', 'Bearer ' . $this->token);
     }
 
+    public function getToken()
+    {
+        return $this->token;
+    }
 }
