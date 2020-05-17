@@ -468,7 +468,7 @@ class Client
      */
     protected function send(Response $response)
     {
-        return json_decode($response->getBody());
+        return json_decode($response->getBody(), true);
     }
 
     /**
